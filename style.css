@@ -508,7 +508,7 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color:white;
+    color:black;
 }
 
 .dashboard-header p {
@@ -1554,6 +1554,7 @@ input:checked + .toggle-slider:before {
     }
 
 }
+
 
 
 
