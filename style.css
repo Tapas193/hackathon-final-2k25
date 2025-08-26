@@ -1253,7 +1253,7 @@ body {
 }
 
 input:checked + .toggle-slider {
-    background-color: grey;
+    background-color: cyan;
 }
 
 input:checked + .toggle-slider:before {
@@ -1553,6 +1553,7 @@ input:checked + .toggle-slider:before {
     }
 
 }
+
 
 
 
