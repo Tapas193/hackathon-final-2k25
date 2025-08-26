@@ -1219,7 +1219,7 @@ body {
     display: inline-block;
     width: 50px;
     height: 24px;
-    color: cyan;
+    color: blue;
 }
 
 .toggle-switch input {
@@ -1553,4 +1553,5 @@ input:checked + .toggle-slider:before {
     }
 
 }
+
 
