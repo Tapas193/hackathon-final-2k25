@@ -424,7 +424,7 @@ body {
 .form-group input {
     width: 100%;
     padding: 12px 16px;
-    border: 2px solid #e5e7eb;
+    border: 2px solid grey;
     border-radius: 8px;
     font-size: 14px;
     transition: border-color 0.3s ease;
@@ -1537,7 +1537,7 @@ input:checked + .toggle-slider:before {
     .faq-search input {
         background: white;
         border-color: #475569;
-        color: #e2e8f0;
+        color: grey;
     }
 
     .table-header {
@@ -1550,4 +1550,5 @@ input:checked + .toggle-slider:before {
     .connected-item {
         background:  #334155;
     }
+
 }
