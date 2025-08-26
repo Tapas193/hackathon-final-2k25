@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniChannel - Unified Loyalty System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="bg.avif" alt="OmniRewards" class="logo">
+                <span class="brand-text">OmniRewards</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-page="home">Home</a>
+                <a href="#dashboard" class="nav-link" data-page="dashboard">Dashboard</a>
+                <a href="#rewards" class="nav-link" data-page="rewards">Rewards</a>
+                <a href="#history" class="nav-link" data-page="history">History</a>
+                <a href="#faq" class="nav-link" data-page="faq">FAQ</a>
+                <a href="#settings" class="nav-link" data-page="settings">Settings</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary" id="loginBtn">Login</button>
+                <button class="btn-primary" id="signupBtn">Sign Up</button>
+                <div class="user-menu hidden" id="userMenu">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='35' r='20' fill='%236C7B7F'/%3E%3Cpath d='M20 80c0-15 15-25 30-25s30 10 30 25' fill='%236C7B7F'/%3E%3C/svg%3E" alt="User" class="user-avatar">
+                    <span class="user-name">Alive</span>
+                    <button class="logout-btn" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Your Reward , Your Way</h1>
+                    <p class="hero-subtitle">Earn, track, and redeem loyalty points seamlessly across online and offline shopping experiences with our omnichannel platform.</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary btn-large" id="getStartedBtn">Get Started</button>
+                        <button class="btn-secondary btn-large" id="learnMoreBtn">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="points-animation">
+                        <div class="point-bubble">+50</div>
+                        <div class="point-bubble">+25</div>
+                        <div class="point-bubble">+100</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <div class="container">
+                    <h2 class="section-title">Why                                                                                                                                                                                                       Choose OmniRewards?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🔄</div>
+                            <h3>Cross-Channel Integration</h3>
+                            <p>Seamlessly connect online and offline purchases in one unified system</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Real-Time Sync</h3>
+                            <p>Instant updates across all platforms and channels with live synchronization</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎁</div>
+                            <h3>Flexible Redemption</h3>
+                            <p>Use points anywhere - online, in-store, or convert to gift cards</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3>Secure & Compliant</h3>
+                            <p>GDPR and CCPA compliant with enterprise-grade security</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login/Signup Page -->
+        <section id="auth-page" class="page">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+
+                <!-- Login Form -->
+                <div id="login-form" class="auth-form active">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to access your loyalty rewards</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="loginEmail">Email or Phone</label>
+                            <input type="text" id="loginEmail" placeholder="Enter your email or phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">Sign In</button>
+                    </form>
+                    <div class="social-login">
+                        <p>Or continue with</p>
+                        <div class="social-buttons">
+                            <button class="social-btn google">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23EA4335' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E" alt="Google">
+                                Google
+                            </button>
+                            <button class="social-btn facebook">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231877F2' d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/%3E%3C/svg%3E" alt="Facebook">
+                                Facebook
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signup Form -->
+                <div id="signup-form" class="auth-form">
+                    <h2>Create Account</h2>
+                    <p>Join thousands of users earning rewards</p>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" placeholder="First name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" placeholder="Last name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email</label>
+                            <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPhone">Phone Number</label>
+                            <input type="tel" id="signupPhone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" id="signupPassword" placeholder="Create password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">Create Account</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section id="dashboard-page" class="page">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back! Here's your loyalty overview</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Points Overview -->
+                    <div class="dashboard-card points-card">
+                        <div class="card-header">
+                            <h3>Total Points</h3>
+                            <span class="points-badge">Active</span>
+                        </div>
+                        <div class="points-display">
+                            <span class="points-number">2,450</span>
+                            <span class="points-label">Available Points</span>
+                        </div>
+                        <div class="points-breakdown">
+                            <div class="breakdown-item">
+                                <span>This Month</span>
+                                <span class="positive">+320</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Redeemed</span>
+                                <span class="negative">-150</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary">Redeem Points</button>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card activity-card">
+                        <div class="card-header">
+                            <h3>Recent Activity</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon earn">+</div>
+                                <div class="activity-details">
+                                    <p>Online Purchase - Amazon</p>
+                                    <span class="activity-date">2 hours ago</span>
+                                </div>
+                                <span class="activity-points positive">+50</span>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon earn">+</div>
+                                <div class="activity-details">
+                                    <p>In-store Purchase - Mall</p>
+                                    <span class="activity-date">1 day ago</span>
+                                </div>
+                                <span class="activity-points positive">+100</span>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon redeem">-</div>
+                                <div class="activity-details">
+                                    <p>Gift Card Redemption</p>
+                                    <span class="activity-date">3 days ago</span>
+                                </div>
+                                <span class="activity-points negative">-200</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="dashboard-card stats-card">
+                        <div class="card-header">
+                            <h3>Quick Stats</h3>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Transactions</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">₹2,340</span>
+                                <span class="stat-label">Total Saved</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">Gold</span>
+                                <span class="stat-label">Tier Status</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">85%</span>
+                                <span class="stat-label">To Next Tier</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Available Rewards -->
+                    <div class="dashboard-card rewards-card">
+                        <div class="card-header">
+                            <h3>Available Rewards</h3>
+                            <a href="#rewards" class="view-all">Browse All</a>
+                        </div>
+                        <div class="rewards-list">
+                            <div class="reward-item">
+                                <div class="reward-icon">🎁</div>
+                                <div class="reward-details">
+                                    <p>₹500 Gift Voucher</p>
+                                    <span class="reward-cost">500 points</span>
+                                </div>
+                                <button class="btn-sm">Redeem</button>
+                            </div>
+                            <div class="reward-item">
+                                <div class="reward-icon">☕</div>
+                                <div class="reward-details">
+                                    <p>Free Coffee</p>
+                                    <span class="reward-cost">100 points</span>
+                                </div>
+                                <button class="btn-sm">Redeem</button>
+                            </div>
+                            <div class="reward-item">
+                                <div class="reward-icon">🛍</div>
+                                <div class="reward-details">
+                                    <p>20% Discount</p>
+                                    <span class="reward-cost">200 points</span>
+                                </div>
+                                <button class="btn-sm">Redeem</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rewards Page -->
+        <section id="rewards-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Available Rewards</h1>
+                    <p>Redeem your points for amazing rewards</p>
+                </div>
+
+                <div class="rewards-filters">
+                    <button class="filter-btn active" data-filter="all">All Rewards</button>
+                    <button class="filter-btn" data-filter="vouchers">Vouchers</button>
+                    <button class="filter-btn" data-filter="discounts">Discounts</button>
+                    <button class="filter-btn" data-filter="freebies">Freebies</button>
+                </div>
+
+                <div class="rewards-grid">
+                    <div class="reward-card" data-category="vouchers">
+                        <div class="reward-image">🎁</div>
+                        <div class="reward-content">
+                            <h3>₹500 Amazon Voucher</h3>
+                            <p>Shop for anything on Amazon with this gift voucher</p>
+                            <div class="reward-meta">
+                                <span class="reward-points">500 Points</span>
+                                <span class="reward-value">₹500 Value</span>
+                            </div>
+                            <button class="btn-primary">Redeem Now</button>
+                        </div>
+                    </div>
+
+                    <div class="reward-card" data-category="discounts">
+                        <div class="reward-image">🛍</div>
+                        <div class="reward-content">
+                            <h3>30% Off Fashion</h3>
+                            <p>Get 30% discount on all fashion items at partner stores</p>
+                            <div class="reward-meta">
+                                <span class="reward-points">300 Points</span>
+                                <span class="reward-value">Up to ₹1000</span>
+                            </div>
+                            <button class="btn-primary">Redeem Now</button>
+                        </div>
+                    </div>
+
+                    <div class="reward-card" data-category="freebies">
+                        <div class="reward-image">☕</div>
+                        <div class="reward-content">
+                            <h3>Free Coffee</h3>
+                            <p>Enjoy a complimentary coffee at any partner café</p>
+                            <div class="reward-meta">
+                                <span class="reward-points">100 Points</span>
+                                <span class="reward-value">₹150 Value</span>
+                            </div>
+                            <button class="btn-primary">Redeem Now</button>
+                        </div>
+                    </div>
+
+                    <div class="reward-card" data-category="vouchers">
+                        <div class="reward-image">🍕</div>
+                        <div class="reward-content">
+                            <h3>₹200 Food Voucher</h3>
+                            <p>Delicious meals at partner restaurants</p>
+                            <div class="reward-meta">
+                                <span class="reward-points">200 Points</span>
+                                <span class="reward-value">₹200 Value</span>
+                            </div>
+                            <button class="btn-primary">Redeem Now</button>
+                        </div>
+                    </div>
+
+                    <div class="reward-card" data-category="discounts">
+                        <div class="reward-image">🎬</div>
+                        <div class="reward-content">
+                            <h3>Movie Ticket Discount</h3>
+                            <p>Buy one get one free on movie tickets</p>
+                            <div class="reward-meta">
+                                <span class="reward-points">250 Points</span>
+                                <span class="reward-value">₹400 Value</span>
+                            </div>
+                            <button class="btn-primary">Redeem Now</button>
+                        </div>
+                    </div>
+
+                    <div class="reward-card" data-category="freebies">
+                        <div class="reward-image">🧴</div>
+                        <div class="reward-content">
+                            <h3>Free Sample Kit</h3>
+                            <p>Beauty and skincare sample kit from top brands</p>
+                            <div class="reward-meta">
+                                <span class="reward-points">150 Points</span>
+                                <span class="reward-value">₹300 Value</span>
+                            </div>
+                            <button class="btn-primary">Redeem Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Page -->
+        <section id="history-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Transaction History</h1>
+                    <p>Track all your points earnings and redemptions</p>
+                </div>
+
+                <div class="history-filters">
+                    <div class="filter-group">
+                        <label>Filter by:</label>
+                        <select id="historyFilter">
+                            <option value="all">All Transactions</option>
+                            <option value="earned">Points Earned</option>
+                            <option value="redeemed">Points Redeemed</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Period:</label>
+                        <select id="periodFilter">
+                            <option value="all">All Time</option>
+                            <option value="month">This Month</option>
+                            <option value="quarter">Last 3 Months</option>
+                            <option value="year">This Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="history-summary">
+                    <div class="summary-card">
+                        <h3>Total Earned</h3>
+                        <span class="summary-value positive">+3,450</span>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Total Redeemed</h3>
+                        <span class="summary-value negative">-1,000</span>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Net Balance</h3>
+                        <span class="summary-value">2,450</span>
+                    </div>
+                </div>
+
+                <div class="history-table">
+                    <div class="table-header">
+                        <div class="table-row">
+                            <div class="table-cell">Date</div>
+                            <div class="table-cell">Description</div>
+                            <div class="table-cell">Channel</div>
+                            <div class="table-cell">Points</div>
+                            <div class="table-cell">Status</div>
+                        </div>
+                    </div>
+                    <div class="table-body">
+                        <div class="table-row">
+                            <div class="table-cell">25 Aug 2025</div>
+                            <div class="table-cell">
+                                <div class="transaction-details">
+                                    <p>Purchase at Amazon</p>
+                                    <span class="transaction-id">TXN-001234</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">
+                                <span class="channel-badge online">Online</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="points-change positive">+50</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">24 Aug 2025</div>
+                            <div class="table-cell">
+                                <div class="transaction-details">
+                                    <p>In-store Purchase - Mall</p>
+                                    <span class="transaction-id">TXN-001233</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">
+                                <span class="channel-badge offline">Offline</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="points-change positive">+100</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">22 Aug 2025</div>
+                            <div class="table-cell">
+                                <div class="transaction-details">
+                                    <p>Gift Card Redemption</p>
+                                    <span class="transaction-id">RDM-001232</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">
+                                <span class="channel-badge app">Mobile App</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="points-change negative">-200</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">20 Aug 2025</div>
+                            <div class="table-cell">
+                                <div class="transaction-details">
+                                    <p>Flipkart Purchase</p>
+                                    <span class="transaction-id">TXN-001231</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">
+                                <span class="channel-badge online">Online</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="points-change positive">+75</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">18 Aug 2025</div>
+                            <div class="table-cell">
+                                <div class="transaction-details">
+                                    <p>Coffee Redemption</p>
+                                    <span class="transaction-id">RDM-001230</span>
+                                </div>
+                            </div>
+                            <div class="table-cell">
+                                <span class="channel-badge offline">Offline</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="points-change negative">-100</span>
+                            </div>
+                            <div class="table-cell">
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <button class="page-btn" disabled>Previous</button>
+                    <span class="page-info">Page 1 of 5</span>
+                    <button class="page-btn">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Page -->
+        <section id="faq-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Frequently Asked Questions</h1>
+                    <p>Find answers to common questions about the loyalty program</p>
+                </div>
+
+                <div class="faq-search">
+                    <input type="text" placeholder="Search FAQs..." id="faqSearch">
+                    <button class="search-btn">🔍</button>
+                </div>
+
+                <div class="faq-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="points">Points</button>
+                    <button class="category-btn" data-category="redemption">Redemption</button>
+                    <button class="category-btn" data-category="account">Account</button>
+                    <button class="category-btn" data-category="technical">Technical</button>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item" data-category="points">
+                        <div class="faq-question">
+                            <h3>How do I earn loyalty points?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can earn loyalty points through various activities:</p>
+                            <ul>
+                                <li>Making purchases online or in-store at partner retailers</li>
+                                <li>Referring friends to join the program</li>
+                                <li>Participating in special promotions and campaigns</li>
+                                <li>Writing product reviews and sharing on social media</li>
+                            </ul>
+                            <p>Points are typically awarded within 24-48 hours of a qualifying transaction.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="points">
+                        <div class="faq-question">
+                            <h3>Do my points expire?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Points have a 2-year expiry period from the date they are earned. You will receive email notifications 30 days before any points are set to expire, giving you time to redeem them.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="redemption">
+                        <div class="faq-question">
+                            <h3>How can I redeem my points?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can redeem points in several ways:</p>
+                            <ul>
+                                <li>Online through our website or mobile app</li>
+                                <li>At physical store locations using your membership card</li>
+                                <li>Convert to gift cards for popular retailers</li>
+                                <li>Apply as discounts during checkout</li>
+                                <li>Exchange for exclusive products and experiences</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="redemption">
+                        <div class="faq-question">
+                            <h3>What's the minimum redemption amount?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The minimum redemption amount is 100 points, which equals ₹10 in value. This ensures that all members can enjoy the benefits regardless of their point balance.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="account">
+                        <div class="faq-question">
+                            <h3>How do I link my online and offline purchases?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Your account automatically links purchases through:</p>
+                            <ul>
+                                <li>Your registered email address or phone number</li>
+                                <li>QR code scanning at participating stores</li>
+                                <li>NFC-enabled loyalty card</li>
+                                <li>Mobile app check-ins at partner locations</li>
+                            </ul>
+                            <p>All transactions appear in your unified dashboard within minutes.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="account">
+                        <div class="faq-question">
+                            <h3>Can I transfer points to another account?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Points are non-transferable between accounts for security reasons. However, you can gift rewards redeemed with your points to friends and family.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <h3>Why aren't my points showing up?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If your points aren't appearing:</p>
+                            <ul>
+                                <li>Wait 24-48 hours as processing can take time</li>
+                                <li>Ensure you're logged into the correct account</li>
+                                <li>Check if the merchant is a participating partner</li>
+                                <li>Verify your purchase meets minimum requirements</li>
+                                <li>Contact support if points still don't appear after 48 hours</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <h3>Is my personal information secure?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we take security seriously. We use enterprise-grade encryption, comply with GDPR and CCPA regulations, and never share your personal information with third parties without your consent. All transactions are secured with industry-standard protocols.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-contact">
+                    <h3>Still have questions?</h3>
+                    <p>Can't find what you're looking for? Our support team is here to help.</p>
+                    <button class="btn-primary">Contact Support</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Page -->
+        <section id="settings-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Account Settings</h1>
+                    <p>Manage your profile and preferences</p>
+                </div>
+
+                <div class="settings-grid">
+                    <!-- Profile Settings -->
+                    <div class="settings-card">
+                        <div class="settings-header">
+                            <h3>Profile Information</h3>
+                            <button class="edit-btn">Edit</button>
+                        </div>
+                        <div class="profile-form">
+                            <div class="profile-avatar">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='35' r='20' fill='%236C7B7F'/%3E%3Cpath d='M20 80c0-15 15-25 30-25s30 10 30 25' fill='%236C7B7F'/%3E%3C/svg%3E" alt="Profile">
+                                <button class="change-avatar">Change Photo</button>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" value="Alive" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" value="Phoenix" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" value="alive.77@example.com" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" value="+91 9876543210" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" value="1990-01-15" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="settings-card">
+                        <div class="settings-header">
+                            <h3>Notification Preferences</h3>
+                        </div>
+                        <div class="notification-settings">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Email Notifications</h4>
+                                    <p>Receive updates about points and rewards via email</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>SMS Alerts</h4>
+                                    <p>Get instant notifications about point earnings</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Push Notifications</h4>
+                                    <p>Receive mobile app notifications</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Marketing Communications</h4>
+                                    <p>Receive promotional offers and partner deals</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Settings -->
+                    <div class="settings-card">
+                        <div class="settings-header">
+                            <h3>Privacy & Security</h3>
+                        </div>
+                        <div class="privacy-settings">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Two-Factor Authentication</h4>
+                                    <p>Add an extra layer of security to your account</p>
+                                </div>
+                                <button class="btn-secondary">Enable</button>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Data Sharing</h4>
+                                    <p>Control how your data is used for personalization</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Activity Tracking</h4>
+                                    <p>Allow tracking for better reward recommendations</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Actions -->
+                    <div class="settings-card">
+                        <div class="settings-header">
+                            <h3>Account Actions</h3>
+                        </div>
+                        <div class="account-actions">
+                            <button class="action-btn">Change Password</button>
+                            <button class="action-btn">Download My Data</button>
+                            <button class="action-btn">Export Transaction History</button>
+                            <button class="action-btn danger">Delete Account</button>
+                        </div>
+                    </div>
+
+                    <!-- Connected Accounts -->
+                    <div class="settings-card">
+                        <div class="settings-header">
+                            <h3>Connected Accounts</h3>
+                        </div>
+                        <div class="connected-accounts">
+                            <div class="connected-item">
+                                <div class="account-info">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23EA4335' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E" alt="Google">
+                                    <span>Google Account</span>
+                                </div>
+                                <span class="connection-status connected">Connected</span>
+                            </div>
+                            <div class="connected-item">
+                                <div class="account-info">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231877F2' d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/%3E%3C/svg%3E" alt="Facebook">
+                                    <span>Facebook Account</span>
+                                </div>
+                                <button class="btn-sm">Connect</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
