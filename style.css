@@ -1314,6 +1314,7 @@ input:checked + .toggle-slider:before {
     display: flex;
     align-items: center;
     gap: 12px;
+    color: white;
 }
 
 .account-info img {
@@ -1553,6 +1554,7 @@ input:checked + .toggle-slider:before {
     }
 
 }
+
 
 
 
